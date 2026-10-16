@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporting an Equipment Issue: From Observation to Maintenance Handoff</title>
+  <meta name="description" content="A scenario-based technical-training module that helps the production team communicate equipment issues accurately to the maintenance team.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="assets/cici-dong-logo-on-dark.png">
+  <link rel="preload" as="image" href="assets/cici-dong-logo-on-light.png">
+  <script>
+    document.documentElement.classList.add("js");
+    if (location.hash && location.hash !== "#introduction") {
+      document.documentElement.classList.add("skip-hero");
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="portfolio-home portfolio-home--float" href="https://cicidong.com/" aria-label="Cici Dong — Back to portfolio" tabindex="-1" inert aria-hidden="true">
+    <span class="portfolio-home__mark">
+      <img class="portfolio-home__logo portfolio-home__logo--dark" src="assets/cici-dong-logo-on-dark.png" width="422" height="512" alt="">
+      <img class="portfolio-home__logo portfolio-home__logo--light" src="assets/cici-dong-logo-on-light.png" width="422" height="512" alt="">
+    </span>
+    <span>Cici Dong</span>
+  </a>
+
+  <main id="main">
+    <header class="hero" id="introduction" data-section>
+      <div class="hero__motif" aria-hidden="true">
+        <svg class="hero__fiber" viewBox="0 0 720 800" preserveAspectRatio="xMaxYMid slice" focusable="false">
+          <g fill="none" stroke="#8FE8C8" stroke-linecap="round">
+            <path d="M30 780C170 650 90 520 240 420c150-100 70-210 250-300 110-55 150-35 230-110" stroke-width="1.5" opacity="0.5"/>
+            <path d="M110 800C210 680 150 560 310 470c160-90 80-220 260-310 90-45 130-25 190-95" stroke-width="1.15" opacity="0.38"/>
+            <path d="M0 640C150 570 110 470 270 390c170-85 110-190 290-270 100-45 150-20 220-80" stroke-width="1.25" opacity="0.32"/>
+            <path d="M170 740C270 610 230 510 380 430c140-75 170-170 290-240" stroke-width="1" opacity="0.42"/>
+            <path d="M50 520C190 470 170 390 320 340c160-55 180-140 310-200" stroke-width="0.9" opacity="0.28"/>
+            <path d="M220 680C300 580 280 500 420 440c120-50 160-120 250-180" stroke-width="0.8" opacity="0.34"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="shell">
+        <a class="portfolio-home" href="https://cicidong.com/" aria-label="Cici Dong — Back to portfolio">
+          <img class="portfolio-home__logo" src="assets/cici-dong-logo-on-dark.png" width="422" height="512" alt="">
+          <span>Cici Dong</span>
+        </a>
+        <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="hero__label">Independent learning sample</p>
+          <h1>Reporting an Equipment Issue: From Observation to Maintenance Handoff</h1>
+          <p class="hero__lead">A scenario-based technical-training module that helps the production team communicate equipment issues accurately to the maintenance team.</p>
+          <ul class="chips">
+            <li>Technical training</li>
+            <li>Cross-team communication</li>
+            <li>Storyline 360</li>
+          </ul>
+          <div class="link-row">
+            <a class="button button--primary" href="https://360.articulate.com/review/content/c2c76c6e-6953-43c7-84e0-9eb05f67f991/review" target="_blank" rel="noopener noreferrer">View the course<span class="visually-hidden"> (opens in a new tab)</span></a>
+            <a class="button button--secondary" href="https://docs.google.com/document/d/17I-xxNu4iTqxSBVFKlaqIR8Uap4L8plqSI8o7IOA5ss" target="_blank" rel="noopener noreferrer">View overview and planning materials<span class="visually-hidden"> (opens in a new tab)</span></a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <figure class="asset hero__figure">
+            <div class="asset__frame asset__frame--16x9 hero__media">
+              <a class="enlarge" href="assets/hero-handoff.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the course title screen (opens in a new tab)">
+                <img src="assets/hero-handoff.png" width="3004" height="1688" alt="Title screen showing two factory workers in hard hats reviewing a tablet, with a Start button and the heading Reporting an Equipment Issue.">
+                <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+              </a>
+            </div>
+            <figcaption>Screen from the independent Storyline training sample.</figcaption>
+          </figure>
+          <dl class="meta">
+            <div>
+              <dt>Audience</dt>
+              <dd>Production staff and supervisors</dd>
+            </div>
+            <div>
+              <dt>My role</dt>
+              <dd>Content adaptation, instructional design, visual and multimedia production, Storyline development, and publishing</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>Storyline 360, Figma, HeyGen, SCORM Cloud</dd>
+            </div>
+            <div>
+              <dt>Development time</dt>
+              <dd>3 days</dd>
+            </div>
+          </dl>
+        </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell layout">
+      <div class="rail">
+        <button class="button button--icon" id="rail-toggle" type="button" aria-expanded="true" aria-controls="section-rail-nav">
+          <span class="rail-toggle__text visually-hidden">Collapse sections</span>
+          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
+            <path d="M12.5 4.5 7 10l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <nav class="rail__nav" id="section-rail-nav" aria-label="Sections">
+          <ol>
+            <li><a href="#introduction" data-nav title="Introduction"><span class="marker">01</span><span class="rail__label">Introduction</span></a></li>
+            <li><a href="#training-context" data-nav title="Context &amp; goals"><span class="marker">02</span><span class="rail__label">Context &amp; goals</span></a></li>
+            <li><a href="#planning" data-nav title="Planning"><span class="marker">03</span><span class="rail__label">Planning</span></a></li>
+            <li><a href="#design-decisions" data-nav title="Design revisions"><span class="marker">04</span><span class="rail__label">Design revisions</span></a></li>
+            <li><a href="#visual-design" data-nav title="Visuals &amp; implementation"><span class="marker">05</span><span class="rail__label">Visuals &amp; implementation</span></a></li>
+            <li><a href="#assessment" data-nav title="Assessment &amp; publishing"><span class="marker">06</span><span class="rail__label">Assessment &amp; publishing</span></a></li>
+            <li><a href="#takeaways" data-nav title="Takeaways"><span class="marker">07</span><span class="rail__label">Takeaways</span></a></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="mobile-sections">
+        <button class="button button--secondary" id="mobile-sections-toggle" type="button" aria-expanded="false" aria-controls="mobile-section-menu">Sections</button>
+        <nav class="section-menu" id="mobile-section-menu" aria-label="Sections" hidden>
+          <ol>
+            <li><a href="#introduction" data-nav><span class="marker">01</span><span>Introduction</span></a></li>
+            <li><a href="#training-context" data-nav><span class="marker">02</span><span>Context &amp; goals</span></a></li>
+            <li><a href="#planning" data-nav><span class="marker">03</span><span>Planning</span></a></li>
+            <li><a href="#design-decisions" data-nav><span class="marker">04</span><span>Design revisions</span></a></li>
+            <li><a href="#visual-design" data-nav><span class="marker">05</span><span>Visuals &amp; implementation</span></a></li>
+            <li><a href="#assessment" data-nav><span class="marker">06</span><span>Assessment &amp; publishing</span></a></li>
+            <li><a href="#takeaways" data-nav><span class="marker">07</span><span>Takeaways</span></a></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="reading">
+        <section id="training-context" class="section" data-section aria-labelledby="training-context-heading">
+          <h2 id="training-context-heading"><span class="section-kicker">02</span>Training context and learning goals</h2>
+          <div class="context">
+            <div class="context__copy">
+              <h3>Source materials</h3>
+              <p>This module adapts training materials and manufacturing incident records from Lenzing, a multinational fiber manufacturer where I previously interned.</p>
+              <h3>Course background</h3>
+              <p>Lenzing’s Gear Project addressed communication barriers between production and maintenance through cross-functional learning. Its materials identified needs around describing equipment faults and preparing maintenance notifications. I selected this reporting task for a focused Storyline module, using a separate manufacturing incident report to build the practice scenario.</p>
+            </div>
+            <div class="context__sources">
+              <figure class="source">
+                <a class="enlarge" href="assets/source-gear-project.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the Gear Project summary (opens in a new tab)">
+                  <img src="assets/source-gear-project.png" width="1672" height="941" alt="English summary of the Gear Project production–maintenance cross-training brief, including purpose, workplace challenges, the two-way learning approach, and planned targets from the source brief.">
+                  <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+                </a>
+                <figcaption>Gear Project: English summary adapted from three original Chinese brief pages.</figcaption>
+              </figure>
+              <figure class="source">
+                <a class="enlarge" href="assets/source-incident-record.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the incident record (opens in a new tab)">
+                  <img src="assets/source-incident-record.png" width="1672" height="941" alt="English adaptation of a drawing-roller fiber-wrapping incident record for March–April 2026, with dated findings and selected March incident counts. The record does not show that repair was completed.">
+                  <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+                </a>
+                <figcaption>Incident record: English adaptation of the Chinese source slide, with selected March records.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <h3>From source training to this sample</h3>
+          <figure class="source">
+            <a class="enlarge" href="assets/gear-project-scope-map.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the source-training scope diagram (opens in a new tab)">
+              <img src="assets/gear-project-scope-map.png" width="1774" height="887" alt="Gear Project’s two cross-training directions, highlighting fault description and maintenance notifications as the selected topic adapted into this independent equipment-issue handoff sample.">
+              <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+            </a>
+            <figcaption>Selected source-training topics and their relationship to this independent Storyline sample.</figcaption>
+          </figure>
+          <div class="goals">
+            <h3>Learning objectives</h3>
+            <ol class="objectives">
+              <li>
+                <h4>Describe the issue</h4>
+                <p>Use supported equipment details, reporting period, and incident counts.</p>
+              </li>
+              <li>
+                <h4>Separate facts from assumptions</h4>
+                <p>Distinguish confirmed information from unverified explanations.</p>
+              </li>
+              <li>
+                <h4>Update the handoff</h4>
+                <p>Incorporate inspection findings without overstating repair or follow-up status.</p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="planning" class="section" data-section aria-labelledby="planning-heading">
+          <h2 id="planning-heading"><span class="section-kicker">03</span>Planning the learning experience</h2>
+          <p class="planning-lead">Before development, I drafted a rough course outline to organize the reporting task and sketched separate screen-by-screen wireframes to plan the sequence, layouts, and interactions. These artifacts guided development as I revised and refined selected activities during the Storyline build.</p>
+          <figure class="journey">
+            <h3>Finished learner journey</h3>
+            <ol class="journey__steps">
+              <li>Review the incident</li>
+              <li>Make reporting decisions</li>
+              <li>Examine a model handoff</li>
+              <li>Practice an update</li>
+              <li>Review the process</li>
+              <li>Apply it to a new incident</li>
+            </ol>
+            <figcaption>Finished learner journey, summarized for this case study.</figcaption>
+          </figure>
+          <div class="compare planning-snapshots">
+            <div>
+              <h3>Course outline</h3>
+              <figure class="source">
+                <div class="planning-snapshots__frame">
+                  <a class="enlarge enlarge--doc" href="https://docs.google.com/document/d/17I-xxNu4iTqxSBVFKlaqIR8Uap4L8plqSI8o7IOA5ss/edit" target="_blank" rel="noopener noreferrer" aria-label="View the course outline in Google Doc (opens in a new tab)">
+                    <img src="assets/planning-outline.png" width="2712" height="1574" alt="Course outline draft showing the course overview, a highlighted plan for understanding and reporting an issue, and Part 2 with struck-through original handoff steps plus a later note for a model handoff.">
+                    <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><path d="M14 4.5h5.5V10M19.5 4.5 10 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 13.5V19a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h5.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="enlarge__label">View in Google Doc</span></span>
+                  </a>
+                </div>
+                <figcaption>Course outline with revisions documented after development.</figcaption>
+                <p class="status-line">Original planning content is shown alongside later revision annotations.</p>
+                <a class="text-link" href="https://docs.google.com/document/d/17I-xxNu4iTqxSBVFKlaqIR8Uap4L8plqSI8o7IOA5ss/edit" target="_blank" rel="noopener noreferrer">View in Google Doc<span class="visually-hidden"> of the course outline (opens in a new tab)</span></a>
+              </figure>
+            </div>
+            <div>
+              <h3>Screen-by-screen wireframes</h3>
+              <figure class="source">
+                <div class="planning-snapshots__frame planning-snapshots__frame--wireframe">
+                  <a class="enlarge" href="assets/screen-by-screen-wireframe.png" target="_blank" rel="noopener noreferrer" aria-label="View full wireframes of the screen-by-screen wireframe overview (opens in a new tab)">
+                    <img src="assets/screen-by-screen-wireframe.png" width="830" height="1800" alt="Screen-by-screen wireframe overview of the equipment handoff, with revision annotations.">
+                    <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">View full wireframes</span></span>
+                  </a>
+                </div>
+                <figcaption>Screen-by-screen wireframe overview, reconstructed after development.</figcaption>
+                <p class="status-line">Earlier ideas and implemented revisions are annotated.</p>
+                <a class="text-link" href="assets/screen-by-screen-wireframe.png" target="_blank" rel="noopener noreferrer">View full wireframes<span class="visually-hidden"> of the screen-by-screen wireframe overview (opens in a new tab)</span></a>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section id="design-decisions" class="section" data-section aria-labelledby="design-decisions-heading">
+          <h2 id="design-decisions-heading"><span class="section-kicker">04</span>Two design decisions and revisions</h2>
+
+          <article class="decision" aria-labelledby="decision-1-title">
+            <h3 id="decision-1-title"><span class="decision__number" aria-hidden="true">1</span>Make the handoff structure visible</h3>
+            <p>Learners have identified supported facts and uncertain claims. Next, they need to see how those decisions fit into a complete maintenance handoff.</p>
+            <div class="decision__compare">
+              <div class="decision__plan">
+                <div class="decision__panel">
+                  <h4>Original plan</h4>
+                  <figure class="source">
+                    <p class="decision__slot-label">Outline excerpt</p>
+                    <a class="enlarge" href="assets/decision-01-outline.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the initial-handoff outline excerpt (opens in a new tab)">
+                      <img src="assets/decision-01-outline.png" width="3108" height="1800" alt="Outline excerpt for creating the initial handoff, with the original plan struck through and an updated step for a completed model handoff with numbered click-to-reveal explanations.">
+                      <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+                    </a>
+                    <figcaption>Initial-handoff outline excerpt, with later revision annotations.</figcaption>
+                  </figure>
+                  <figure class="source">
+                    <p class="decision__slot-label">Wireframe</p>
+                    <a class="enlarge" href="assets/decision-01-wireframe.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the initial-handoff wireframe (opens in a new tab)">
+                      <img src="assets/decision-01-wireframe.png" width="3108" height="1800" alt="Wireframe of the earlier handoff concept replaced by a model handoff, showing facts versus assumptions, numbered click-to-reveal explanations, and the inspection email.">
+                      <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+                    </a>
+                    <figcaption>Original pre-build wireframe for the initial-handoff activity.</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="decision__final">
+                <div class="decision__panel">
+                  <h4>Final interaction</h4>
+                  <figure class="asset">
+                    <video class="demo__video" data-auto-demo width="3004" height="1688" autoplay loop muted playsinline controls preload="metadata">
+                      <source src="assets/decision-01-interaction.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Completed model handoff with numbered click-to-reveal explanations.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="decision__reasons">
+              <div>
+                <h4><span class="decision__icon" aria-hidden="true"><svg class="decision__glyph" viewBox="0 0 24 24" width="20" height="20" focusable="false"><path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3"/><path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3"/><path d="M16.2 4.8V8H19.5"/><path d="M7.8 19.2V16H4.5"/></svg></span>What changed</h4>
+                <p>I replaced another scenario, a blank-form walkthrough, and additional questions with a completed model handoff and five numbered click-to-reveal explanations.</p>
+              </div>
+              <div>
+                <h4><span class="decision__icon" aria-hidden="true"><svg class="decision__glyph" viewBox="0 0 24 24" width="20" height="20" focusable="false"><path d="M9.4 9.2a2.7 2.7 0 1 1 3.7 2.5c-.8.4-1.4 1-1.4 1.9"/><circle cx="11.7" cy="16.7" r="0.7" fill="currentColor" stroke="none"/></svg></span>Why</h4>
+                <p>The worked example connects individual reporting decisions to a complete handoff, giving learners a reference before they practice updating it.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="decision" aria-labelledby="decision-2-title">
+            <h3 id="decision-2-title"><span class="decision__number" aria-hidden="true">2</span>Add practice for organizing an update</h3>
+            <p>An inspection email introduces new findings, while repair status remains unconfirmed. Learners must decide what can be added and where it belongs.</p>
+            <div class="decision__compare">
+              <div class="decision__plan">
+                <div class="decision__panel">
+                  <h4>Original plan</h4>
+                  <figure class="source">
+                    <p class="decision__slot-label">Outline excerpt</p>
+                    <a class="enlarge" href="assets/decision-02-outline.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the inspection-update outline excerpt (opens in a new tab)">
+                      <img src="assets/decision-02-outline.png" width="3108" height="1800" alt="Outline excerpt for updating the handoff, with retained multiple-choice and feedback steps plus an added drag-and-drop practice step.">
+                      <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+                    </a>
+                    <figcaption>Inspection-update outline excerpt, with later revision annotations.</figcaption>
+                  </figure>
+                  <figure class="source">
+                    <p class="decision__slot-label">Wireframe</p>
+                    <a class="enlarge" href="assets/decision-02-wireframe.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the inspection-update wireframe (opens in a new tab)">
+                      <img src="assets/decision-02-wireframe.png" width="3108" height="1800" alt="Wireframe of the retained update question and added drag-and-drop practice for matching finding, action, and status cards to handoff fields.">
+                      <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+                    </a>
+                    <figcaption>Original pre-build wireframe for the inspection-update activity.</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="decision__final">
+                <div class="decision__panel">
+                  <h4>Final interaction</h4>
+                  <figure class="asset">
+                    <video class="demo__video" data-auto-demo width="3004" height="1688" autoplay loop muted playsinline controls preload="metadata">
+                      <source src="assets/decision-02-interaction.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Inspection-update question and feedback, followed by drag-and-drop practice.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="decision__reasons">
+              <div>
+                <h4><span class="decision__icon" aria-hidden="true"><svg class="decision__glyph" viewBox="0 0 24 24" width="20" height="20" focusable="false"><path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3"/><path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3"/><path d="M16.2 4.8V8H19.5"/><path d="M7.8 19.2V16H4.5"/></svg></span>What changed</h4>
+                <p>I retained the multiple-choice update question and explanatory feedback, then added a three-card drag-and-drop activity.</p>
+              </div>
+              <div>
+                <h4><span class="decision__icon" aria-hidden="true"><svg class="decision__glyph" viewBox="0 0 24 24" width="20" height="20" focusable="false"><path d="M9.4 9.2a2.7 2.7 0 1 1 3.7 2.5c-.8.4-1.4 1-1.4 1.9"/><circle cx="11.7" cy="16.7" r="0.7" fill="currentColor" stroke="none"/></svg></span>Why</h4>
+                <p>The question checks which update is justified. The drag-and-drop activity then asks learners to organize that information into the appropriate handoff fields before the final assessment.</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section id="visual-design" class="section implementation" data-section aria-labelledby="visual-design-heading">
+          <h2 id="visual-design-heading"><span class="section-kicker">05</span>Visual design and Storyline implementation</h2>
+          <p class="planning-lead">I used Figma to prepare visual components and Storyline 360 to build the course interactions. This example shows the transition from a visual draft to its implementation in the course.</p>
+          <h3>From visual draft to working interaction</h3>
+          <div class="compare compare--components">
+            <div class="evidence">
+              <h4>Figma component draft</h4>
+              <figure class="source">
+                <div class="component-frame">
+                  <a class="enlarge" href="assets/implementation-figma.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the Figma component draft (opens in a new tab)">
+                    <img src="assets/implementation-figma.png" width="1536" height="1024" alt="Figma component library for the equipment issue handoff, showing typography, the color palette, button states, and drag-and-drop card and drop-target states.">
+                    <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+                  </a>
+                </div>
+                <figcaption>Component draft created in Figma.</figcaption>
+              </figure>
+            </div>
+            <div class="evidence">
+              <h4>Storyline component</h4>
+              <figure class="source">
+                <div class="component-frame">
+                  <a class="enlarge" href="assets/implementation-storyline.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the Storyline component (opens in a new tab)">
+                    <img src="assets/implementation-storyline.png" width="2379" height="1800" alt="Storyline states for drag cards, View Report, Next, and drop targets, including normal, hover, down, disabled, drag over, drop correct, and drop incorrect.">
+                    <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+                  </a>
+                </div>
+                <figcaption>Corresponding component implemented in Storyline 360.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <figure class="asset" hidden>
+            <div class="asset__frame asset__frame--16x9 asset__frame--recording">
+              <p class="asset__name">implementation-interaction.mp4</p>
+              <p class="asset__status">Asset pending.</p>
+              <p class="asset__note">Recording pending.</p>
+            </div>
+            <figcaption>Interaction behavior in the finished Storyline course.</figcaption>
+          </figure>
+          <h3 hidden>How the interaction works</h3>
+          <p class="pending" hidden>Implementation explanation pending.</p>
+          <h3 hidden>Course visual style</h3>
+          <p class="planning-lead" hidden>A compact reference for the course’s palette, typography, and recurring interface components.</p>
+          <figure class="asset asset--guide" hidden>
+            <div class="asset__frame asset__frame--guide">
+              <p class="asset__name">course-style-guide.png</p>
+              <p class="asset__status">Asset pending.</p>
+            </div>
+            <figcaption>Course visual style, summarized for this case study.</figcaption>
+          </figure>
+        </section>
+
+        <section id="assessment" class="section closing" data-section aria-labelledby="assessment-heading">
+          <h2 id="assessment-heading"><span class="section-kicker">06</span>Assessment, learner support, and publishing</h2>
+          <h3>Apply the process to a new incident</h3>
+          <p class="planning-lead">A captioned HeyGen briefing introduces a different equipment incident. Learners select supplied entries to assemble a five-field maintenance handoff, applying the reporting process beyond the guided example.</p>
+          <ol class="closing__fields">
+            <li>Equipment/issue</li>
+            <li>Timeline</li>
+            <li>Inspection finding</li>
+            <li>Completed action</li>
+            <li>Status/follow-up</li>
+          </ol>
+          <div class="compare">
+            <figure class="source">
+              <a class="enlarge" href="assets/assessment-screen.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the assessment screen (opens in a new tab)">
+                <img src="assets/assessment-screen.png" width="2744" height="1548" alt="Final assessment screen with a captioned briefing video about Cutter No. 10 and five selectable maintenance handoff fields.">
+                <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+              </a>
+              <figcaption>Video briefing and five selectable handoff fields.</figcaption>
+            </figure>
+            <figure class="source">
+              <a class="enlarge" href="assets/assessment-result.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the assessment result (opens in a new tab)">
+                <img src="assets/assessment-result.png" width="2744" height="1544" alt="Assessment result screen showing a score of 80 out of 100 and a passed message.">
+                <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+              </a>
+              <figcaption>Example of on-screen assessment results and feedback.</figcaption>
+            </figure>
+          </div>
+          <h3>Scoring and feedback</h3>
+          <p class="planning-lead">Each correct field contributes 20 points, with a passing threshold of 80/100. Unanswered fields prompt completion before scoring. Completed responses receive a score and feedback, followed by continuation after passing or another attempt below the threshold.</p>
+          <div class="closing__outcomes">
+            <div class="evidence">
+              <h4>Incomplete</h4>
+              <p>One or more fields unanswered</p>
+              <p>Complete missing fields before scoring.</p>
+            </div>
+            <div class="evidence">
+              <h4>Pass</h4>
+              <p>All fields answered; score at least 80/100</p>
+              <p>View results and continue.</p>
+            </div>
+            <div class="evidence">
+              <h4>Retry</h4>
+              <p>All fields answered; score below 80/100</p>
+              <p>View feedback and try again.</p>
+            </div>
+          </div>
+          <h3>Assessment alignment</h3>
+          <div class="table-scroll">
+            <table class="alignment">
+              <thead>
+                <tr>
+                  <th scope="col">Learning objective</th>
+                  <th scope="col">Assessment evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Describe the issue</td>
+                  <td>Equipment/issue and timeline selections; incident counts are checked in earlier practice.</td>
+                </tr>
+                <tr>
+                  <td>Separate facts from assumptions</td>
+                  <td>Inspection finding, completed action, and status/follow-up selections distinguish confirmed information from unsupported claims.</td>
+                </tr>
+                <tr>
+                  <td>Update the handoff</td>
+                  <td>The five-field response organizes incident and inspection information into a structured handoff.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="status-line">The assessment checks selection and organization of supplied information; it does not independently assess free-form handoff writing.</p>
+          <h3>Learner support</h3>
+          <ul class="closing__support">
+            <li><span class="closing__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" focusable="false"><path d="M5 10h2.5L11 7v10l-3.5-3H5z"/><path d="M15 9.5a3.5 3.5 0 0 1 0 5"/></svg></span>Narration</li>
+            <li><span class="closing__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" focusable="false"><path d="M5 8h14M5 12h14M5 16h14"/><circle cx="9" cy="8" r="1.3" fill="currentColor" stroke="none"/><circle cx="14" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="11" cy="16" r="1.3" fill="currentColor" stroke="none"/></svg></span>Player audio controls</li>
+            <li><span class="closing__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" focusable="false"><path d="M7 5h8l3 3v11H7z"/><path d="M15 5v3h3"/><path d="M9 12h6M9 15h4"/></svg></span>Slide notes</li>
+            <li><span class="closing__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" focusable="false"><path d="M5 8h14v8H5z"/><path d="M8 11h2.2M13.2 11H16M8 13.5h5"/></svg></span>Assessment-video captions and replay</li>
+          </ul>
+          <p class="planning-lead">These features help learners access and revisit the course information.</p>
+          <div class="compare compare--support">
+            <div class="evidence">
+              <h4>Notes and audio controls</h4>
+              <figure class="source">
+                <div class="support-frame">
+                  <a class="enlarge" href="assets/learner-support-notes-audio.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the notes and audio controls (opens in a new tab)">
+                    <img src="assets/learner-support-notes-audio.png" width="3828" height="1800" alt="Published course with the Notes panel open and player audio controls visible.">
+                    <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+                  </a>
+                </div>
+                <figcaption>Published course with slide notes and player audio controls visible.</figcaption>
+              </figure>
+            </div>
+            <div class="evidence">
+              <h4>Narration sample</h4>
+              <figure class="asset">
+                <div class="narration__stage support-frame" data-narration>
+                  <video class="narration__video" width="3992" height="1938" playsinline controls preload="metadata" poster="assets/learner-support-notes-audio.png">
+                    <source src="assets/learner-support-narration.mp4" type="video/mp4">
+                  </video>
+                  <div class="narration__shade" aria-hidden="true"></div>
+                  <button class="narration__play" type="button">
+                    <svg class="narration__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+                    <span class="narration__label">Play with sound</span>
+                  </button>
+                </div>
+                <figcaption>A short course excerpt demonstrating narration. Sound plays when selected.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <h3>Publishing and testing</h3>
+          <p class="planning-lead">I published the course as a SCORM 1.2 package and uploaded it to SCORM Cloud for testing.</p>
+          <figure class="source">
+            <a class="enlarge" href="assets/scorm-cloud-test-results.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge the SCORM Cloud test results (opens in a new tab)">
+              <img src="assets/scorm-cloud-test-results.png" width="4066" height="2054" alt="SCORM Cloud test results showing Complete, Passed, and an 80% score for the SCORM 1.2 course.">
+              <span class="enlarge__overlay" aria-hidden="true"><svg class="enlarge__icon" viewBox="0 0 24 24" width="36" height="36" focusable="false"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M15.2 15.2 20 20M10.5 7.8v5.4M7.8 10.5h5.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span class="enlarge__label">Enlarge image</span></span>
+            </a>
+            <figcaption>SCORM Cloud test run showing completion, passed status, and an 80% score.</figcaption>
+          </figure>
+        </section>
+
+        <section id="takeaways" class="section" data-section aria-labelledby="takeaways-heading">
+          <h2 id="takeaways-heading"><span class="section-kicker">07</span>Project takeaways</h2>
+          <p class="planning-lead">This project brought together multimedia production, deliberate practice sequencing, and design choices for busy production staff. I also explored SCORM publishing to test how the course could support LMS tracking.</p>
+          <ol class="takeaways__notes">
+            <li class="takeaways__item">
+              <div class="takeaways__note">
+                <p class="takeaways__label">NOTE 01</p>
+                <h4>Match the medium to the task</h4>
+                <p>I used email and incident records to establish the workplace scenario, click-to-reveal explanations to unpack a model handoff, and a video briefing to introduce a new incident.</p>
+              </div>
+            </li>
+            <li class="takeaways__item">
+              <div class="takeaways__note">
+                <p class="takeaways__label">NOTE 02</p>
+                <h4>Build for tracking</h4>
+                <p>I intentionally published a SCORM 1.2 package and uploaded it to SCORM Cloud to explore LMS tracking of learner results.</p>
+              </div>
+            </li>
+            <li class="takeaways__item">
+              <div class="takeaways__note">
+                <p class="takeaways__label">NOTE 03</p>
+                <h4>Practice judgment, then organization</h4>
+                <p>Learners first decide which information is supported, then practice placing it into the appropriate handoff fields.</p>
+              </div>
+            </li>
+            <li class="takeaways__item">
+              <div class="takeaways__note">
+                <p class="takeaways__label">NOTE 04</p>
+                <h4>Respect learners’ workload</h4>
+                <p>For busy production staff, I used supplied choices in the final assessment to focus effort on reporting decisions and reduce typing demands. This checks selection and organization rather than independent writing.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="nav.js"></script>
+  <script>
+    (function () {
+      var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      function holdDemo(video) {
+        video.autoplay = false;
+        video.removeAttribute("autoplay");
+        video.pause();
+      }
+
+      function startDemo(video) {
+        if (motion.matches) {
+          holdDemo(video);
+          return;
+        }
+        var pending = video.play();
+        if (pending && typeof pending.catch === "function") {
+          pending.catch(function () {});
+        }
+      }
+
+      document.querySelectorAll("[data-auto-demo]").forEach(startDemo);
+
+      if (typeof motion.addEventListener === "function") {
+        motion.addEventListener("change", function () {
+          if (!motion.matches) return;
+          document.querySelectorAll("[data-auto-demo]").forEach(holdDemo);
+        });
+      }
+
+      document.querySelectorAll("[data-narration]").forEach(function (stage) {
+        var video = stage.querySelector("video");
+        var button = stage.querySelector(".narration__play");
+        var shade = stage.querySelector(".narration__shade");
+        var label = stage.querySelector(".narration__label");
+
+        function show(text) {
+          label.textContent = text;
+          button.hidden = false;
+          shade.hidden = false;
+        }
+
+        function hide() {
+          button.hidden = true;
+          shade.hidden = true;
+        }
+
+        button.addEventListener("click", function () {
+          if (video.ended) video.currentTime = 0;
+          var pending = video.play();
+          if (pending && typeof pending.then === "function") {
+            pending.then(hide).catch(function () {
+              show(video.ended ? "Replay" : "Play with sound");
+            });
+            return;
+          }
+          hide();
+        });
+
+        video.addEventListener("ended", function () {
+          show("Replay");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
